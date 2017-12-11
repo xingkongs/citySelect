@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>城市选择</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<style>
+    main{
+        margin:50px;
+    }
+    .wrapped{
+        max-width:1100px;
+        margin:0 auto;
+        position: relative;
+    }
+    p{
+        text-align: left;
+    }
+
+</style>
+<body class="wrapped">
+<main>
+    <section>
+        <p>
+            <a href="javascript:;"><span id="test1" name="city1">北京</span></a>
+        </p>
+    </section>
+
+</main>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/cityList.js"></script>
+<script src="js/citySelect.js"></script>
+<script>
+    window.onload = function(){
+        $("#test1").on("click",function(){
+            var _this = this;
+            citypicker.show({left: 30, top : 50}, function(data){
+                $(_this).find("span").text(data);
+            });
+        });
+
+        //例二:
+        //var b = document.getElementById("test1");
+        // var p = {left: 323, top : 20};
+        // var fn1 = function(city){
+        //     b.value = city;
+        // };
+        //
+        // b.onclick = function(){
+        //     citypicker.bind(fn1).fix(p).show();
+        // };
+        //
+        // //例三:
+        //var c = document.getElementById("test1");
+        // var fn2 = function(city){
+        //     c.value = city;
+        // };
+        // c.onclick = function(){
+        //     citypicker.show({
+        //         left : 566,
+        //         top  : 20,
+        //         selected : fn2
+        //     });
+        // };
+    }
+</script>
+</body>
+</html>

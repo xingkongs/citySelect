@@ -1,0 +1,171 @@
+html, body {
+    height: 100%;
+
+}
+*, :after, :before{
+    box-sizing:border-box;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline
+}
+.mod_list_city a {
+    color: #325E7F;
+    text-decoration:none;
+}
+.mod_list_city{
+    font-size:13px;
+}
+.mod_list_city:before,.mod_list_city:after{
+    content:'';
+    display:block;
+    position:absolute;
+    width:0;
+    height:0;
+    top:-24px;
+    left:20px;
+    border:11.5px solid transparent;
+    border-bottom-color:#e3e3e3;
+}
+.mod_list_city:after{
+    top: -20px;
+    left: 22px;
+    border-width: 10px;
+    border-bottom-color: #fff;
+}
+.mod_list_city a:link, .mod_list_city a:visited {
+    text-decoration: none
+}
+.mod_list_city .mod_city_list a:hover, .mod_list_city .mod_city_list a:active ,.mod_list_city p a:hover, .mod_list_city p a:active {
+    color:#fff;
+    background: #f60;
+}
+.mod_list_city p{
+    margin:0;
+}
+.mod_list_city {
+    margin: 0;
+    padding: 0 0 20px;
+    font-family: Microsoft YaHei, Verdana, arial;
+    font-size: 12px;
+    position: absolute;
+    width: 550px;
+    background-color: #FFFFFF;
+    display: none;
+    z-index: 9999;
+    border:1px solid #e3e3e3;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+.mod_list_city .city_top {
+    border-bottom: 0.5px solid #e3e3e3;
+}
+.mod_list_city .city_top strong {
+    display: inline;
+    float: left;
+    text-align: left
+}
+.mod_list_city .city_top p {
+    text-align: left;
+    width: 100%;
+    line-height:66px;
+    padding:0 20px;
+}
+.mod_list_city a {
+    color: #325E7F;
+    margin-right: 3px;
+    padding: 2px
+}
+.mod_list_city .city_top a {
+    display: inline-block;
+    color: #f60;
+    width: 24px;
+    padding:0;
+    text-align: center;
+    line-height: 24px;
+    background: #ffe7db;
+    margin-right:10px;
+    border-radius:2px;
+
+}
+.mod_list_city .hot {
+    height: 25px;
+    line-height: 25px
+}
+.mod_list_city .list_wrap h4 {
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 5px
+}
+.mod_list_city .list_wrap {
+    height: 230px;
+    overflow-y: scroll;
+    width: 100%;
+}
+.mod_list_city .list_wrap::-webkit-scrollbar{width:4px;}
+.mod_list_city .list_wrap::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius:8px;
+}
+.mod_list_city .list_wrap::-webkit-scrollbar-track{
+    opacity: 1;
+    background: #fff;
+}
+.mod_list_city .list_wrap:hover::-webkit-scrollbar-thumb,.list_wrap:active::-webkit-scrollbar-thumb{background-color:#bebebe}
+.mod_list_city .list_wrap:hover::-webkit-scrollbar-track{background: #e4e4e4;}
+.mod_list_city .list_wrap .city_cont {
+}
+.mod_list_city .mod_city_list{
+    width: 100%;
+    border-collapse: collapse;
+}
+.mod_list_city .mod_city_list tr{
+    display: block;
+    padding:5px 20px;
+    margin-bottom:1px;
+    border-bottom:0.5px dashed #e3e3e3;
+}
+.mod_list_city .list_wrap .mod_city_list a {
+    height: 24px;
+    line-height: 24px;
+    display: block;
+    float: left;
+    padding: 0 8px;
+    margin: 2px 6px 2px 2px;
+    white-space: nowrap;
+}
+.mod_list_city .list_wrap .mod_city_list .col1 {
+    width: 30px;
+    font-size: 12px
+}
+.mod_list_city .list_wrap .mod_city_list .col2 {
+    width: 500px;
+    font-size: 12px
+}
+.mod_list_city .list_wrap .mod_city_list th {
+    width: 78px;
+    color: #333;
+    text-align: right;
+    font-weight: bold;
+     padding-top: 3px;
+    vertical-align: top;
+}
+.mod_list_city .list_wrap .mod_city_list th span:first-of-type {
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    color: #cecece;
+    font-weight: normal;
+    padding: 0 3px;
+    display: inline-block;
+    width: 24px;
+    line-height:24px;
+    text-align: center
+}
+.mod_list_city .list_wrap .mod_city_list th span:last-of-type{
+    line-height: 24px;
+    display: inline-block;
+    float: right;
+    padding: 0;
+}
