@@ -9,11 +9,6 @@
     main{
         margin:50px;
     }
-    .wrapped{
-        max-width:1100px;
-        margin:0 auto;
-        position: relative;
-    }
     p{
         text-align: left;
     }
@@ -36,8 +31,9 @@
     window.onload = function(){
         $("#test1").on("click",function(){
             var _this = this;
-            citypicker.show({left: 30, top : 50}, function(data){
-                $(_this).find("span").text(data);
+            citypicker.show({left: 30, top : 100}, function(data){
+                console.log(data);
+                $(_this).text(data);
             });
         });
 

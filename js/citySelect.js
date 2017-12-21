@@ -55,7 +55,6 @@
                     th = doc.createElement("th"),
                     td = doc.createElement("td"),
                     span = doc.createElement("span"),
-                    span2 = doc.createElement("span"),
                     text = doc.createTextNode(miao),
                     miaoArray = city[miao],
                     currentMiao = null,
@@ -63,24 +62,25 @@
                 if(miao==="AA"){
                     text=doc.createTextNode("直")
                 }
-                //console.log(miaoArray);
                 for(var sheng in miaoArray){
-
-                    var shiArray = miaoArray[sheng]
-                    for (var j = 0, len = shiArray.length; j < len; j++) {
+                    var d = doc.createElement("span");
+                    d.appendChild(doc.createTextNode(sheng+":"));
+                    td.appendChild(d);
+                    var $dd = doc.createElement("div");
+                    $dd.className = 'clearfix';
+                    $dd.appendChild(d);
+                    for (var j = 0,shiArray = miaoArray[sheng], len = shiArray.length; j < len; j++) {
                         currentMiao = shiArray[j];
                         a = doc.createElement("a");
                         a.title = currentMiao.name;
                         a.href = "/" + currentMiao.spell;
                         a.appendChild(doc.createTextNode(currentMiao.name));
-                        td.appendChild(a);
+                        $dd.appendChild(a);
                     }
+                    td.appendChild($dd);
                 }
-
                 span.appendChild(text);
                 th.appendChild(span);
-                span2.appendChild(doc.createTextNode(sheng+":"));
-                th.appendChild(span2);
                 tr.id = "miao_" + miao;
                 tr.appendChild(th);
                 tr.appendChild(td);
@@ -138,6 +138,7 @@
                 }
             } else {
                 var miao = doc.getElementById("miao_" + m);
+                console.log(miao);
                 if (miao !== null) {
                     miao.scrollIntoView();
                 }
@@ -151,8 +152,9 @@
             if (target.tagName.toLowerCase() == "a") {
                 selectedCity = target.innerHTML;
                 callback(selectedCity);
+                citypicker.close();
             }
-            citypicker.close();
+
             stopPropagation(event);
             preventDefault(event);
         };
@@ -279,4 +281,5 @@
         }
     };
     window.citypicker = citypicker;
+
 })(window);

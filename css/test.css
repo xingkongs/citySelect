@@ -1,9 +1,17 @@
 html, body {
-    height: 100%;
+     height: 100%;
 
-}
+ }
 *, :after, :before{
     box-sizing:border-box;
+}
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.clearfix{
+    *zoom:1;
 }
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
     margin: 0;
@@ -49,7 +57,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
     padding: 0 0 20px;
     font-family: Microsoft YaHei, Verdana, arial;
     font-size: 12px;
-    position: absolute;
+    position: fixed;
     width: 550px;
     background-color: #FFFFFF;
     display: none;
@@ -144,12 +152,26 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
     font-size: 12px
 }
 .mod_list_city .list_wrap .mod_city_list th {
-    width: 78px;
+    width: 24px;
     color: #333;
     text-align: right;
     font-weight: bold;
-     padding-top: 3px;
+    padding-top: 3px;
     vertical-align: top;
+}
+.mod_list_city .list_wrap .mod_city_list td{
+}
+.mod_list_city .list_wrap .mod_city_list td div{
+    padding-left: 60px;
+    position: relative;
+}
+.mod_list_city .list_wrap .mod_city_list td div>span{
+    display: inline-block;
+    width:54px;
+    text-align: right;
+    position: absolute;
+    top:5px;
+    left:0;
 }
 .mod_list_city .list_wrap .mod_city_list th span:first-of-type {
     float: left;
