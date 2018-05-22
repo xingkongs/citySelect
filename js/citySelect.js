@@ -5,7 +5,7 @@
  * Email: 164068300@qq.com
  * QQ:164068300
  */
-(function (host) {
+!(function (host) {
     var window = host || window,
         doc = document,
         selectedCity = "",
@@ -14,7 +14,7 @@
         hotEventProxy = null,
         scrollEventProxy = null,
         toString = Object.prototype.toString,
-        city = cityList.city,
+        city = cityList1.city,
         KEY = ["A", "F", "G"],
         ID = {cityFrame: "div_select_city_sub_menu", cityList: "div_city_list"},
         CLAZZ = {
@@ -131,17 +131,17 @@
     function cityScroll(m) {
         if (m && typeof m === "string") {
             m = m.toUpperCase();
-            if (doc.all) {
+            if (doc) {
                 var cityListDiv = doc.getElementById(ID.cityList), tr = doc.getElementById("miao_" + m);
                 if (tr !== null) {
-                    cityListDiv.scrollTop = tr.offsetTop + 32;
+                    cityListDiv.scrollTop = tr.offsetTop;
                 }
-            } else {
-                var miao = doc.getElementById("miao_" + m);
-                console.log(miao);
-                if (miao !== null) {
-                    miao.scrollIntoView();
-                }
+            // } else {
+            //     var miao = doc.getElementById("miao_" + m);
+            //     console.log(miao);
+            //     if (miao !== null) {
+            //         miao.scrollIntoView();
+            //     }
             }
         }
     }

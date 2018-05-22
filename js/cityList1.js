@@ -1,4 +1,4 @@
-var cityList = {
+var cityList1 = {
     "result": "success",
     "code": 200,
     "city": {

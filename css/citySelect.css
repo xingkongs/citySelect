@@ -1,0 +1,128 @@
+body{
+    padding-top:90px;
+}
+.title{
+    line-height:45px;
+    color:#333;
+    font-size:17px;
+    text-align: center;
+    position: relative;
+    background: #fff;
+    border-bottom:none;
+}
+.title .title_back{
+    position: absolute;
+    width:17px;
+    height:17px;
+    left:15px;
+    top:14px;
+    background: url("../images/left.png") no-repeat center;
+    background-size: contain;
+}
+#cityList{
+    line-height: 30px;
+    color:#333;
+    font-size:15px;
+    height:600px;
+    overflow-y: scroll;
+}
+#cityList .title{
+    text-align: left;
+    font-weight:bold;
+    padding:0 4%;
+    background: #f2f3f6;
+}
+.li_cities{
+    margin:15px auto;
+}
+.li_cities li{
+    float:left;
+    width:31.14%;
+    text-align: center;
+    line-height:34px;
+    border:1px solid #cecece;
+    border-radius: 5px;
+    margin:0 10px 10px 0;
+}
+.li_cities li:nth-of-type(3n+3){
+    margin-right:0;
+}
+.li_cities li span{
+    display: inline-block;
+    vertical-align: bottom;
+    width:98%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.fixLink{
+    position: fixed;
+    background: #f2f3f6;
+    width:25px;
+    color:#333;
+    font-size:12px;
+    font-weight:bold;
+    right:0;
+    top:140px;
+    line-height:2;
+    padding:10px 0;
+    text-align: center;
+    user-select: none;
+    border-radius: 10px;
+}
+.my-alert{
+    width:120px;
+    height:120px;
+    line-height: 120px;
+    position: fixed;
+    text-align: center;
+    font-size: 41px;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    z-index: 4;
+}
+
+#cityList .name{
+    text-align: left;
+    font-size:14px;
+    color:#565656;
+    padding:0 4%;
+    background: #f2f3f6;
+    -webkit-user-select: none;
+}
+.li_models li{
+    padding:0 4%;
+    font-size:15px;
+    color:#333;
+    line-height: 45px;
+    border-bottom:0.5px solid #e3e3e3;
+}
+.li_models li .am-fl{
+    float:left;
+    max-width:75%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.li_models li img{
+    display: none;
+    height: 22.5px;
+    vertical-align: middle;
+}
+.li_models li.active img{
+    display: inline-block;
+}
+.selectAll{
+    line-height:45px;
+    padding:0 4%;
+    border-top:0.5px solid #e3e3e3;
+}
+.selectAll img{
+    vertical-align: bottom;
+}

@@ -57,7 +57,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
     padding: 0 0 20px;
     font-family: Microsoft YaHei, Verdana, arial;
     font-size: 12px;
-    position: fixed;
+    position: absolute;
     width: 550px;
     background-color: #FFFFFF;
     display: none;

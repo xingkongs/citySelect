@@ -25,14 +25,13 @@
 </main>
 
 <script src="js/jquery.min.js"></script>
-<script src="js/cityList.js"></script>
+<script src="js/cityList1.js"></script>
 <script src="js/citySelect.js"></script>
 <script>
     window.onload = function(){
         $("#test1").on("click",function(){
             var _this = this;
             citypicker.show({left: 30, top : 100}, function(data){
-                console.log(data);
                 $(_this).text(data);
             });
         });

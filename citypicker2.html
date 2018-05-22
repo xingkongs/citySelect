@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wap城市选择</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/citySelect.css?v=20180201">
+</head>
+<body>
+    <main>
+        <div class="am-topbar-fixed-top">
+            <header class="am-topbar ">
+                <div class="wrapper clearfix">
+                    <h1 class="logo--wrapper am-fl">
+                        <a class="link" href="#" target="_blank"></a>
+                        <a class="link2" href="#"></a>
+                    </h1>
+                    <div class="am-fr header_location">
+                        <a href="citypicker2.html">
+                            <img src="images/location.png" alt="location">
+                            <span id="city">北京</span>
+                            <input type="hidden" id="_userName" >
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <section class="title">
+                <span>选择城市</span>
+                <a href="javascript:;" onclick="window.history.go(-1);">
+                    <div class="title_back"></div>
+                </a>
+            </section>
+        </div>
+    <section id="cityList">
+        <!--<ul>-->
+            <!--<li>-->
+                <!--<div class="title">A</div>-->
+                <!--<ul class="li_cities wrapper clearfix">-->
+                    <!--<li><span>鞍山</span></li>-->
+                    <!--<li><span>安阳</span></li>-->
+                    <!--<li><span>阿坝</span></li>-->
+                    <!--<li><span>阿尔卑斯</span></li>-->
+                    <!--<li><span>阿克苏</span></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+    </section>
+    <div class="fixLink">
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>F</li>
+            <li>G</li>
+            <li>H</li>
+            <li>J</li>
+            <li>L</li>
+            <li>N</li>
+            <li>Q</li>
+            <li>S</li>
+            <li>T</li>
+            <li>X</li>
+            <li>Y</li>
+            <li>Z</li>
+        </ul>
+    </div>
+    <div class="my-alert"></div>
+    </main>
+    <script type="text/javascript" src="//cdn-fs.d1ev.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="js/cityList2.js"></script>
+    <script src="js/template-web.js"></script>
+    <script id="cityContent" type="text/html">
+        <ul>{{each city value i}}
+            <li><div class="title" id="target_{{i}}">{{i}}</div>
+                <ul class="li_cities wrapper clearfix">
+                    {{each value value01 i01}}
+                    <li><span>{{value01.name}}</span></li>
+                    {{/each}}
+                </ul></li>
+            {{/each}}</ul>
+    </script>
+    <script>
+        var html = template("cityContent",data);
+        document.querySelector("#cityList").innerHTML = html;
+        $(".fixLink ul").on("touchstart",function (e) {
+                $(".my-alert").text($(e.target).text()).show();
+            scrollTo(e.target.textContent);
+        }).on("touchmove",function (e) {
+            e.preventDefault();
+            var touch = e.originalEvent.touches[0];
+            var width = $(this).find("li").width();
+            var height =$(this).find("li").height();
+            var pos = {"x": touch.pageX, "y": touch.pageY};
+            var x = pos.x, y = pos.y;
+            $(this).find("li").each(function (i, item) {
+                var offset = $(item).offset();
+                var left = offset.left, top = offset.top;
+                if (x > left && x < (left + width) && y > top && y < (top + height)) {
+                    var $text = $(item).text().trim();
+                    scrollTo($text);
+                    $(".my-alert").text($text);
+                }
+            });
+        }).on("touchend",function (e) {
+            $(".my-alert").hide();
+        });
+        function scrollTo(a) {
+            var linkContent = document.getElementById("cityList");
+            var linkTarget = document.getElementById("target_"+a);
+            linkContent.scrollTop = linkTarget.offsetTop-90;
+        }
+        $("#cityList1").on("click","span",function (e) {
+            $("#city").text($(this).text());
+        });
+
+    </script>
+</body>
+</html>
